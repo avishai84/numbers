@@ -1,5 +1,6 @@
 import React, { useReducer, useState } from "react";
 import Randomizr from './Randomizr';
+import CheckArray from './CheckArray';
 
 const initialNumbers = [0,1,2,3,4,5,6,7,8,9,10];
 
@@ -11,7 +12,8 @@ const [items, dispatch] = useReducer((state:any, action:any):any => {
     switch(action.type){
       case 'Randomizr':
          const rndNum = Randomizr(0, 10);
-         setRndmNum(rndNum);
+        
+          console.log(CheckArray(rndNum, state));
         return state;
       case 'new':
         return state = [...initialNumbers];
