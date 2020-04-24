@@ -1,5 +1,8 @@
-const CheckArray = (item, array) => {
-      const index = [...array].indexOf(Number.parseInt(item));
-      return(index > -1 ? true : false);
+const CheckArray = (randomNum, arrayFromState) => {
+      if([...arrayFromState].length > 0){
+            const index = [...arrayFromState].indexOf(Number.parseInt(randomNum));
+            return(index > -1 ? true : false);
+      }
+      return('');
 };
 export default CheckArray;

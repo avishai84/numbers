@@ -1,20 +1,12 @@
-import React, { useReducer, useState } from "react";
-import Randomizr from './Randomizr';
-import CheckArray from './CheckArray';
+import React, { useReducer, useState, useEffect } from "react";
+import GenerateNumber from './GenerateNumber';
 
 const initialNumbers = [0,1,2,3,4,5,6,7,8,9,10];
-
 const NumbersModule = () => {
-  //const getRandomArbitrary:any = (min:any, max:any) => Number.parseFloat(Math.random() * (max - min) + min).toFixed(0);
 const [rndmNum, setRndmNum] = useState();
 const [items, dispatch] = useReducer((state:any, action:any):any => {
 
     switch(action.type){
-      case 'Randomizr':
-         const rndNum = Randomizr(0, 10);
-        
-          console.log(CheckArray(rndNum, state));
-        return state;
       case 'new':
         return state = [...initialNumbers];
       case 'rmv':
@@ -29,15 +21,19 @@ const [items, dispatch] = useReducer((state:any, action:any):any => {
       }
 
 },[...initialNumbers]);
+
+
+useEffect( () => {
+
+  let rndNum:any = GenerateNumber(items);
+  setRndmNum(rndNum);
   
-console.log(rndmNum);
+}, [items]);
 
   return(
     <> 
       <ul> 
-      <button onClick={() => dispatch({"type":"Randomizr"})}>Randomizr</button>
-        New Number: {rndmNum}
-        <button onClick={() => dispatch({"type":"new"})}>new game</button>
+        New Number: {rndmNum} {items.length === 0 && <button onClick={() => dispatch({"type":"new"})}>new game</button>}
           {
           [...items].map(item => <li
             key={item+1}
