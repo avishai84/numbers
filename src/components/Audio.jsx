@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import AudioPlayer from "./AudioPlayer";
 
 const Audio = ({ announcedNumber, browser }) => {
- 
   const [playName, setPlayName] = useState("");
   const [
     passStringNumberToAudioPlayer,
@@ -11,7 +10,6 @@ const Audio = ({ announcedNumber, browser }) => {
   const [isPlayerReady, setIsPlayerReady] = useState(false);
 
   const convertToString = () => {
-    console.log("convertToString is running");
     const array = [
       ["zero", "zerosafari"],
       ["one", "onesafari"],
@@ -54,11 +52,9 @@ const Audio = ({ announcedNumber, browser }) => {
   useEffect(() => {
     setPlayName(announcedNumber);
     convertToString();
-    console.log("playName: playName ", playName);
   }, [playName]);
 
   useEffect(() => {
-    console.log("AUDIO: announcedNumber ", passStringNumberToAudioPlayer);
     setIsPlayerReady(true);
     convertToString();
   }, [passStringNumberToAudioPlayer]);

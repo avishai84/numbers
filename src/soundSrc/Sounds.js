@@ -25,17 +25,17 @@ import tensafari from '../soundSrc/ten.aifc';
 
 // TODO: fix file if Safari
 const Sounds = [
-            {'zero' : zeroMP3, 'zerosafari': zerosafari },
-            {'one' : oneMP3, 'onesafari': onesafari},
-            {'two' : twoMP3, 'twosafari' : twosafari},
-            {'three': threeMP3, 'threesafari' : threesafari},
-            {'four': fourMP3, 'foursafari' : foursafari},
-            {'five': fiveMP3, 'fivesafari' : fivesafari},
-            {'six': sixMP3, 'sixsafari' : sixsafari},
-            {'seven': sevenMP3, 'sevensafari' : sevensafari},
-            {'eight': eightMP3, 'eightsafari' : eightsafari},
-            {'nine': nineMP3, 'ninesafari' : ninesafari},
-            {'ten': tenMP3, 'tensafari' : tensafari}
-            ];
+      { 'zero': zeroMP3, 'zerosafari': zerosafari },
+      { 'one': oneMP3, 'onesafari': onesafari },
+      { 'two': twoMP3, 'twosafari': twosafari },
+      { 'three': threeMP3, 'threesafari': threesafari },
+      { 'four': fourMP3, 'foursafari': foursafari },
+      { 'five': fiveMP3, 'fivesafari': fivesafari },
+      { 'six': sixMP3, 'sixsafari': sixsafari },
+      { 'seven': sevenMP3, 'sevensafari': sevensafari },
+      { 'eight': eightMP3, 'eightsafari': eightsafari },
+      { 'nine': nineMP3, 'ninesafari': ninesafari },
+      { 'ten': tenMP3, 'tensafari': tensafari }
+];
 
 export default Sounds;

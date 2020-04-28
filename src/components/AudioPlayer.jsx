@@ -8,8 +8,6 @@ const AudioPlayer = ({ playList, playListArray }) => {
   const [playListArrayNum, setPlayListArray] = useState("");
 
   useEffect(() => {
-    console.log("useEffect 1 playListItem ", playListItem);
-    console.log("useEffect 1 playListArrayNum ", playListArrayNum);
     setPlayListArray(playListArray);
     setPlayList(playList);
   });
@@ -17,7 +15,6 @@ const AudioPlayer = ({ playList, playListArray }) => {
   useEffect(() => {
     setPlayList(playList);
     setPlayListArray(playListArray);
-    console.log("useEffect 2 playListItem TOTAL", Sounds);
   }, [playListItem]);
 
 
@@ -33,9 +30,6 @@ if (Sounds !== undefined) {
   }
 }
 
-
-
-  //console.log('buildSoundPath: ', buildSoundPath);
   return (
     <>
       <ReactAudioPlayer
@@ -43,13 +37,7 @@ if (Sounds !== undefined) {
       autoPlay={true}
       controls
       loop
-            />
-      {/* <button onClick={play}>play</button>        */}
-      {/* <audio ref={audioRef} loop={'loop'} className="audioPlayer" >
-              <source src={oggFile} type="audio/ogg" />
-              <source src={mp3File} type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio> */}
+      />
     </>
   );
 };
