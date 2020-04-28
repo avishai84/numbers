@@ -3,6 +3,7 @@ const CheckArray = (randomNum, arrayFromState) => {
             const index = [...arrayFromState].indexOf(Number.parseInt(randomNum));
             return(index > -1 ? true : false);
       }
-      return('');
+      console.log('less then 1 === 0');
+      return(null);
 };
 export default CheckArray;

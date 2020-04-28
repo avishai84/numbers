@@ -1,8 +1,9 @@
 import React, { useReducer, useState, useEffect } from "react";
 import GenerateNumber from './GenerateNumber';
+import Audio from './Audio';
 
 const initialNumbers = [0,1,2,3,4,5,6,7,8,9,10];
-const NumbersModule = () => {
+const NumbersModule = ({browserName}:any) => {
 const [rndmNum, setRndmNum] = useState();
 const [items, dispatch] = useReducer((state:any, action:any):any => {
 
@@ -25,15 +26,15 @@ const [items, dispatch] = useReducer((state:any, action:any):any => {
 
 useEffect( () => {
 
-  let rndNum:any = GenerateNumber(items);
-  setRndmNum(rndNum);
+  let rndNumLocal:any = GenerateNumber(items);
+  setRndmNum(rndNumLocal);
   
 }, [items]);
 
   return(
     <> 
       <ul> 
-        New Number: {rndmNum} {items.length === 0 && <button onClick={() => dispatch({"type":"new"})}>new game</button>}
+        Announce: {rndmNum} {items.length === 0 && <button onClick={() => dispatch({"type":"new"})}>new game</button>}
           {
           [...items].map(item => <li
             key={item+1}
@@ -43,6 +44,9 @@ useEffect( () => {
           </li>)
           }
         </ul>
+        {items.length > 0 && 
+        <Audio announcedNumber={rndmNum} browser={browserName}/>
+        }
     </>
     );
 };
