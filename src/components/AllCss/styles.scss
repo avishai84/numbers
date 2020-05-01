@@ -1,0 +1,134 @@
+:root{
+  --font-a: 'Fredericka the Great', cursive;
+  --font-b: 'Cabin Sketch', cursive;
+  --font-c: 'Rye', cursive;
+  --font-d: 'East Sea Dokdo', cursive;
+  --color-a: rgb(121, 5, 5);
+  --color-b: rgb(2, 255, 103);
+  --color-c: rgb(255, 91, 2);
+  --color-d: rgb(243, 11, 255);
+  --cubic1-1: .85;
+  --cubic1-2: .18;
+  --cubic1-3: .44;
+  --cubic1-4: 0.68;
+  --translation :0;
+  --translation-a: 0;
+  --translation-b: 0;
+  --translation-c: 0;
+  --translation-d: 0;
+  --translation-e: 0;
+  --translation-f: 0;
+  --translation-g: 0;
+  --translation-h: 0;
+  --translation-i: 0;
+  --translation-j: 0;
+  --translation-k: 0;
+  --translation-l: 0;
+  
+}
+
+@keyframes run {
+	0% {
+    transform: translate3d(0,0,0) rotate(-20deg) scale(0.8)
+    translateX(var(--translation-a))
+    translateY(var(--translation)-b);
+    
+	}
+	100% {
+
+    transform: translate3d(1ch, 0.4in, 1em) rotate(380deg) scale(0.6)
+    translateX(var(--translation-c))
+    translateY(var(--translation-d));
+	};
+}
+
+html,
+body {
+  color: var(--color-b);
+  font-family: var(--font-a);
+  font-size: 16px;
+  background-color: #4ab2f9;
+  background-image: linear-gradient(0deg, #4ab2f9 51%, #0a6282 100%);
+  height:100%;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=0);
+  min-height: 100vh;
+  overflow: hidden;
+  perspective: 1000px;
+  perspective-origin: center center;
+  .App {
+    display:block;
+    max-height:400px;
+    max-width:1200px;
+    width:100%;
+    margin:0 auto;
+    ul {
+      display:flex;
+      list-style: none;
+      position:relative;
+      li {
+        width: fit-content;
+        height: max-content;
+        color: var(--color-a);
+        font-size:10rem;
+        font-weight: bold;
+        font-family: var(--font-a);
+        //position:absolute;
+        //cubic-bezier(1, 0.06, 0.48, 0.68)
+        animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
+        //top:var(--translation);
+        //left:var(--translation);
+        // transform: 
+        // translateX(calc(var(--translation) * 1vw))
+        // translateY(calc(var(--translation) * 1vh));
+        &:hover{
+          cursor: grab;
+        }
+      }
+      li:nth-child(odd) {
+        color: var(--color-b);
+        font-family: var(--font-b);
+        //top:var(--translation-a);
+        //left:var(--translation-b);
+        //animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
+      }
+      li:nth-child(even) {
+        color: var(--color-c);
+        font-family: var(--font-c);
+        //top:var(--translation-c);
+        //left:var(--translation-d);
+        //animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
+      }
+      li:nth-child(8n) {
+        color: var(--color-a);
+        font-family: var(--font-a);
+        //top:var(--translation-d);
+        //left:var(--translation-d);
+        //animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
+      }
+      li:nth-child(4n) {
+        color: var(--color-a);
+        font-family: var(--font-a);
+        //top:var(--translation-e);
+        //left:var(--translation-f);
+        //animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
+      }
+      li:last-child{
+        color: var(--color-d);
+        font-family: var(--font-d);
+        //top:var(--translation-i);
+        //left:var(--translation-j);
+        //animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
+      }
+      li:first-child{
+        color: var(--color-d);
+        font-family: var(--font-d);
+        //top:var(--translation-k);
+        //left:var(--translation-l);
+        //animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
+      }
+      
+    }
+  }
+}
+
+
