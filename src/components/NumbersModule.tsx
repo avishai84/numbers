@@ -1,7 +1,7 @@
 import React, { useReducer, useState, useEffect } from "react";
 import GenerateNumber from './GenerateNumber';
 import Audio from './Audio';
-import {hello, CssAlive, bye, changeEasing} from './CssFn/CssAlive';
+import {changeEasing} from './CssFn/CssAlive';
 import './AllCss/styles.scss';
 // const updateCSSInterval:any = ():any => {
 //   setInterval(() => {
@@ -12,6 +12,7 @@ import './AllCss/styles.scss';
 const initialNumbers:any = [0,1,2,3,4,5,6,7,8,9,10];
 const NumbersModule = ({browserName}:any) => {
 const [rndmNum, setRndmNum] = useState();
+const [level, setLevel] = useState(0);
 // const [cssAlive, setCssAlive] = useState();
 // const [isGameOver, setIsgameOver ] = useState(false);
 const [items, dispatch] = useReducer((state:any, action:any):any => {
@@ -19,6 +20,7 @@ const [items, dispatch] = useReducer((state:any, action:any):any => {
 
     switch(action.type){
       case 'new':
+        setLevel(level + 1);
         return state = [...initialNumbers];
       case 'rmv':
 
@@ -27,7 +29,7 @@ const [items, dispatch] = useReducer((state:any, action:any):any => {
           if(index > -1){
             const temp = [...state];
             temp.splice(index, 1);
-            changeEasing();
+            changeEasing(level);
             return(state = [...temp]);
           }
         }else{
@@ -73,7 +75,11 @@ useEffect( () => {
 
   return(
     <> 
+    <header>
       <h2>Announce: {rndmNum} {items.length === 0 && <button onClick={() => dispatch({"type":"new"})}>new game</button>}</h2>
+        <h6>Your level: {level}</h6>
+    </header>
+
       <ul className="ul"> 
           {
           [...items].map(item => <li

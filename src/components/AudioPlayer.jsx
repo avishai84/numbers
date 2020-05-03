@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import Sounds from "../soundSrc/Sounds";
 let buildSoundPath;
@@ -35,7 +35,6 @@ if (Sounds !== undefined) {
       <ReactAudioPlayer
       src={buildSoundPath}
       autoPlay={true}
-      controls
       loop
       />
     </>
