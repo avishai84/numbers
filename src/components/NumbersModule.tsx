@@ -13,10 +13,7 @@ const initialNumbers:any = [0,1,2,3,4,5,6,7,8,9,10];
 const NumbersModule = ({browserName}:any) => {
 const [rndmNum, setRndmNum] = useState();
 const [level, setLevel] = useState(0);
-// const [cssAlive, setCssAlive] = useState();
-// const [isGameOver, setIsgameOver ] = useState(false);
 const [items, dispatch] = useReducer((state:any, action:any):any => {
-
 
     switch(action.type){
       case 'new':
@@ -47,31 +44,6 @@ useEffect( () => {
   let rndNumLocal:any = GenerateNumber(items);
       setRndmNum(rndNumLocal);
 }, [items]);
-
-// useEffect(()=> { 
-//   // setInterval(() => {
-//     updateCSSInterval();
-//   // }, 5000);
-//   // setCssAlive();
-//   if([...items].length === 0){
-//     console.log('Items cssAlive 1 ');
-//     setIsgameOver(true);
-//     clearInterval(updateCSSInterval);
-//   }
-//   if([...items].length === initialNumbers){
-//     console.log('Items cssAlive 2 ');
-//     updateCSSInterval();
-//   }
-// });
-
-
-// useEffect(() => {
-//  console.log('GAME OVER');
-//   return () => {
-//     // cleanup
-//     //clearInterval(updateCSSInterval);
-//   }
-// }, [isGameOver])
 
   return(
     <> 

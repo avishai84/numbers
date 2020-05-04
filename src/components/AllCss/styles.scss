@@ -135,7 +135,6 @@ body {
     ul {
       display:flex;
       list-style: none;
-      //position:relative;
       li {
         width: fit-content;
         height: max-content;
@@ -143,16 +142,7 @@ body {
         font-size:10rem;
         font-weight: bold;
         font-family: var(--font-a);
-        //position:absolute;
-        //cubic-bezier(1, 0.06, 0.48, 0.68)
         animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
-        ////top:var(--translation);
-        ////left:var(--translation);
-        // transform: 
-         //translateX(calc(var(--translation) * 1vw))
-         //translateY(calc(var(--translation) * 1vh));
-        //top:var(--translation-a);
-        //left:var(--translation-b);
         &:hover{
           cursor: grab;
         }
@@ -161,61 +151,30 @@ body {
         color: var(--color-b);
         font-family: var(--font-b);
         animation: run1 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
-        ////top:var(--translation-a);
-        ////left:var(--translation-b);
-        //animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
-        //top:var(--translation-c);
-        //left:var(--translation-d);
       }
       li:nth-child(even) {
         color: var(--color-c);
         font-family: var(--font-c);
         animation: run2 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
-        ////top:var(--translation-c);
-        ////left:var(--translation-d);
-        //animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
-        //top:var(--translation-e);
-        //left:var(--translation-f);
       }
       li:nth-child(8n) {
         color: var(--color-a);
         font-family: var(--font-a);
-        ////top:var(--translation-d);
-        ////left:var(--translation-d);
-        //animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
-        //top:var(--translation-g);
-        //left:var(--translation-j);
       }
       li:nth-child(4n) {
         color: var(--color-a);
         font-family: var(--font-a);
-        ////top:var(--translation-e);
-        ////left:var(--translation-f);
-        //animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
-        //top:var(--translation-k);
-        //left:var(--translation-l);
       }
       li:last-child{
         color: var(--color-d);
         font-family: var(--font-d);
         animation: run3 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite reverse both;
-        ////top:var(--translation-i);
-        ////left:var(--translation-j);
-        //animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
-        //top:var(--translation-m);
-        //left:var(--translation-n);
       }
       li:first-child{
         color: var(--color-d);
         font-family: var(--font-d);
         animation: run4 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite reverse both;
-        ////top:var(--translation-k);
-        ////left:var(--translation-l);
-        //animation: run 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite alternate-reverse both;
-        //top:var(--translation-o);
-        //left:var(--translation-p);
       }
-      
     }
   }
 }

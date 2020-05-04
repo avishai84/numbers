@@ -10,13 +10,7 @@ const AudioPlayer = ({ playList, playListArray }) => {
   useEffect(() => {
     setPlayListArray(playListArray);
     setPlayList(playList);
-  });
-
-  useEffect(() => {
-    setPlayList(playList);
-    setPlayListArray(playListArray);
-  }, [playListItem]);
-
+  },[playListArray, playList]);
 
 if (Sounds !== undefined) {
 

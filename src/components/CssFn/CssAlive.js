@@ -3,7 +3,6 @@ const part = (min, offset) => Math.random() * offset + min;
 const style = document.documentElement.style;
 
 export const changeEasing = (dificulty) => {
-      console.log('dificulty ', dificulty);
 //Change the four points of the cubic-bezier to up the non-linear ante
       const level = 3 * dificulty;
       style.setProperty('--cubic1-1', part(Math.random() * .8, Math.random() * .5));

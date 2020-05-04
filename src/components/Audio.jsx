@@ -11,37 +11,24 @@ const Audio = ({ announcedNumber, browser }) => {
 
   const convertToString = () => {
     const array = [
-      ["zero", "zerosafari"],
-      ["one", "onesafari"],
-      ["two", "twosafari"],
-      ["three", "threesafari"],
-      ["four", "foursafari"],
-      ["five", "fivesafari"],
-      ["six", "sixsafari"],
-      ["seven", "sevensafari"],
-      ["eight", "eightsafari"],
-      ["nine", "ninesafari"],
-      ["ten", "tensafari"],
+      ["zero"],
+      ["one"],
+      ["two"],
+      ["three"],
+      ["four"],
+      ["five"],
+      ["six"],
+      ["seven"],
+      ["eight"],
+      ["nine"],
+      ["ten"],
     ];
 
-    const isBrowserTypeExist =
-      browser !== null || browser !== undefined || browser !== ""
-        ? true
-        : false;
-
-    if (isBrowserTypeExist) {
-      if (browser === "safari") {
-        const safariArray = array[playName];
-        if (safariArray !== undefined) {
-          return setStringNumberToAudioPlayer(safariArray[1]);
-        }
-      } else {
-        const otherBrowsersArray = array[playName];
-        if (otherBrowsersArray !== undefined) {
-          return setStringNumberToAudioPlayer(otherBrowsersArray[0]);
-        }
-      }
+    const returnedSound = array[playName];
+    if (returnedSound !== undefined) {
+      return setStringNumberToAudioPlayer(returnedSound[0]);
     }
+
   };
 
   useEffect(() => {
