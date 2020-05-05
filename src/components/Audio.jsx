@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AudioPlayer from "./AudioPlayer";
 
-const Audio = ({ announcedNumber, browser }) => {
+const Audio = ({ announcedNumber }) => {
   const [playName, setPlayName] = useState("");
   const [
     passStringNumberToAudioPlayer,
@@ -28,23 +28,16 @@ const Audio = ({ announcedNumber, browser }) => {
     if (returnedSound !== undefined) {
       return setStringNumberToAudioPlayer(returnedSound[0]);
     }
-
   };
 
   useEffect(() => {
-    setPlayName(announcedNumber);
-    convertToString();
+    announcedNumber !== undefined && setPlayName(announcedNumber);
+    announcedNumber !== undefined && convertToString();
   });
 
   useEffect(() => {
-    setPlayName(announcedNumber);
-    convertToString();
-  }, [playName]);
-
-  useEffect(() => {
     setIsPlayerReady(true);
-    convertToString();
-  }, [passStringNumberToAudioPlayer]);
+  }, [playName, passStringNumberToAudioPlayer]);
 
   return (
     <>

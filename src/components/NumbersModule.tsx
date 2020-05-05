@@ -3,12 +3,7 @@ import GenerateNumber from './GenerateNumber';
 import Audio from './Audio';
 import {changeEasing} from './CssFn/CssAlive';
 import './AllCss/styles.scss';
-// const updateCSSInterval:any = ():any => {
-//   setInterval(() => {
-//     console.log('interval ');
-//   }, 5000);
 
-// };  
 const initialNumbers:any = [0,1,2,3,4,5,6,7,8,9,10];
 const NumbersModule = ({browserName}:any) => {
 const [rndmNum, setRndmNum] = useState();
@@ -48,11 +43,23 @@ useEffect( () => {
   return(
     <> 
     <header>
-      <h2>Announce: {rndmNum} {items.length === 0 && <button onClick={() => dispatch({"type":"new"})}>new game</button>}</h2>
-        <h6>Your level: {level}</h6>
+      {items.length === 0 ?
+        <div className="nextGame">
+           <button onClick={() => dispatch({"type":"new"})}>next game</button>
+        </div>: 
+        <>
+           <h4>Announced: {rndmNum}</h4>
+           <h4>Your level: {level}</h4>
+        </>       
+      }
     </header>
-
-      <ul className="ul"> 
+  
+    {
+    items.length === 0 ?
+    <div className="flexWrapper">
+      <h1>game over</h1>
+     </div>
+     :<ul className="ul"> 
           {
           [...items].map(item => <li
             key={item+1}
@@ -62,8 +69,9 @@ useEffect( () => {
           </li>)
           }
         </ul>
+       } 
         {items.length > 0 && 
-        <Audio announcedNumber={rndmNum} browser={browserName}/>
+        <Audio announcedNumber={rndmNum} />
         }
     </>
     );

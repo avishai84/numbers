@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import Sounds from "../soundSrc/Sounds";
 let buildSoundPath;
-// TODO: Fix file if Safari
 const AudioPlayer = ({ playList, playListArray }) => {
   const [playListItem, setPlayList] = useState("");
   const [playListArrayNum, setPlayListArray] = useState("");
@@ -19,7 +18,6 @@ if (Sounds !== undefined) {
     if (playListItem !== undefined && playListItem !== null && playListItem.length > 0) {
 
       buildSoundPath = null ?? Sounds[playListArrayNum][playListItem];
-
     }
   }
 }

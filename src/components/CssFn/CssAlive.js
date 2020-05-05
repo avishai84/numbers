@@ -4,7 +4,7 @@ const style = document.documentElement.style;
 
 export const changeEasing = (dificulty) => {
 //Change the four points of the cubic-bezier to up the non-linear ante
-      const level = 3 * dificulty;
+      const level = 1 * dificulty;
       style.setProperty('--cubic1-1', part(Math.random() * .8, Math.random() * .5));
       style.setProperty('--cubic1-2', part(Math.random() * .12, Math.random()*.2));
       style.setProperty('--cubic1-3', part(Math.random() * .35, Math.random() *.25));
