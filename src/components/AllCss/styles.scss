@@ -119,6 +119,7 @@
 html,
 body {
   color: var(--color-b);
+  font-family: "Helvetica Neue",Arial,"Noto Sans",sans-serif;
   font-family: var(--font-a);
   font-size: 16px;
   background-color: #4ab2f9;
@@ -134,7 +135,6 @@ body {
     flex-flow: row;
     justify-content: space-around;
     background-image: linear-gradient(0deg, #07538551 51%, #0a6282 100%);
-    //font-family: "Helvetica Neue",Arial,"Noto Sans",sans-serif;
     color:var(--color-c);
     font-family: var(--font-c);
     h4 {font-size: 1.65rem;}
@@ -219,6 +219,24 @@ body {
         font-family: var(--font-d);
         animation: run4 3s cubic-bezier(calc(var(--cubic1-1)),calc(var(--cubic1-2)),calc(var(--cubic1-3)),calc(var(--cubic1-4))) 1s infinite reverse both;
       }
+    }
+    .controls{
+      display:flex;
+      flex-flow: row;
+      justify-content: center;
+      padding-top:10rem;
+      .iconControls {
+        font-size:2.75rem;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .footer{
+      margin-top:2rem;
+      color: var(--color-a);
+      font-size: 1rem;
+      font-family: "Helvetica Neue",Arial,"Noto Sans",sans-serif;
     }
   }
 }

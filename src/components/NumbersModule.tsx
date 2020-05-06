@@ -15,7 +15,6 @@ const [items, dispatch] = useReducer((state:any, action:any):any => {
         setLevel(level + 1);
         return state = [...initialNumbers];
       case 'rmv':
-
         if(rndmNum == Number.parseInt(action.value)){
           const index = [...state].indexOf(Number.parseInt(action.value));
           if(index > -1){
@@ -27,7 +26,6 @@ const [items, dispatch] = useReducer((state:any, action:any):any => {
         }else{
           return(state);
         }
-       
         break;
         default: return [...state];  
       }
@@ -53,7 +51,7 @@ useEffect( () => {
         </>       
       }
     </header>
-  
+    <main>
     {
     items.length === 0 ?
     <div className="flexWrapper">
@@ -73,6 +71,7 @@ useEffect( () => {
         {items.length > 0 && 
         <Audio announcedNumber={rndmNum} />
         }
+      </main>  
     </>
     );
 };
