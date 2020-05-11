@@ -7,3 +7,6 @@ A game for toddlers:
    <h1 align="center">Numbers Game</h1>
 </p>
 
+```
+Git clone repo and npm start
+```
