@@ -1,5 +1,8 @@
-export type NumnerModuleProps = {};
-    
+export type NumberModuleProps = {
+
+};
+//export type string;    
+
 //     numArray: Array<number>
 
 // };
