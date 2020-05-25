@@ -3,8 +3,11 @@ import GenerateNumber from './GenerateNumber';
 import Audio from './Audio';
 import {changeEasing} from './CssFn/CssAlive';
 import './AllCss/styles.scss';
+import fillArray from './FillArray';
 
-const initialNumbers:any = [0,1,2,3,4,5,6,7,8,9,10];
+const numberRandomOrderdedArray = fillArray(0, 10);
+console.log('RANDOM ARRAY: ', numberRandomOrderdedArray);
+const initialNumbers:any = [...numberRandomOrderdedArray];
 const NumbersModule = ({browserName}:any) => {
 const [rndmNum, setRndmNum] = useState();
 const [level, setLevel] = useState(0);
@@ -34,7 +37,7 @@ const [items, dispatch] = useReducer((state:any, action:any):any => {
 
 
 useEffect( () => {
-  let rndNumLocal:any = GenerateNumber(items);
+  let rndNumLocal:any = GenerateNumber(items, 0, 10);
       setRndmNum(rndNumLocal);
 }, [items]);
 
@@ -47,7 +50,7 @@ useEffect( () => {
         </div>: 
         <>
            <h4>Announced: {rndmNum}</h4>
-           <h4>Your level: {level}</h4>
+           <h4>Level: {level}</h4>
         </>       
       }
     </header>
@@ -55,7 +58,7 @@ useEffect( () => {
     {
     items.length === 0 ?
     <div className="flexWrapper">
-      <h1>game over</h1>
+      <h1>yay! next level {level + 1}</h1>
      </div>
      :<ul className="ul"> 
           {

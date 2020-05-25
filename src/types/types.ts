@@ -1,11 +1,6 @@
 export type NumberModuleProps = {
+      
+}
 
-};
-//export type string;    
+export type rndom = (min:number, max:number ) =>  1;
 
-//     numArray: Array<number>
-
-// };
-// export type numArray = Array<number>;
-// export type anyNumber = number;
-// export type anyValue = any;

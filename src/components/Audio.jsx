@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo, useCallback } from "react";
 import AudioPlayer from "./AudioPlayer";
 
 
@@ -11,6 +11,7 @@ const Audio = ({ announcedNumber }) => {
   const [isPlayerReady, setIsPlayerReady] = useState(false);
 
   const convertToString = () => {
+    console.log('audio');
     const array = [
       ["zero"],
       ["one"],
@@ -26,6 +27,7 @@ const Audio = ({ announcedNumber }) => {
     ];
 
     const returnedSound = array[playName];
+    console.log('returnedSound: ', returnedSound);
     if (returnedSound !== undefined) {
       return setStringNumberToAudioPlayer(returnedSound[0]);
     }
@@ -39,7 +41,7 @@ const Audio = ({ announcedNumber }) => {
   useEffect(() => {
     setIsPlayerReady(true);
   }, [playName, passStringNumberToAudioPlayer]);
-
+console.log('audio: ', passStringNumberToAudioPlayer);
   return (
     <>
       {isPlayerReady && (
@@ -48,4 +50,4 @@ const Audio = ({ announcedNumber }) => {
     </>
   );
 };
-export default Audio;
+export default memo(Audio);
