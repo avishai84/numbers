@@ -6,7 +6,7 @@ import "./AllCss/styles.scss";
 import fillArray from "./FillArray";
 
 const numberRandomOrderdedArray = fillArray(0, 10);
-const initialNumbers: any = [...numberRandomOrderdedArray];
+const initialNumbers: number[] = [...numberRandomOrderdedArray];
 const NumbersModule = ({ browserName }: any) => {
   const [rndmNum, setRndmNum] = useState();
   const [level, setLevel] = useState(0);

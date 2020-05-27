@@ -15,3 +15,5 @@ export type SoundsType = [
       { 'ten': string, '_': string}
 ];
 export type rndom = (min:number, max:number ) =>  1;
+
+export type randomizerFN<Type> = (min: Type, max: Type) => Type;
