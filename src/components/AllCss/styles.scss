@@ -223,15 +223,22 @@ body {
       }
     }
     .controls{
-      display:flex;
-      flex-flow: row;
-      justify-content: center;
-      padding-top:10rem;
+
       .iconControls {
         font-size:2.75rem;
+        padding-right:1rem;
         &:hover {
           cursor: pointer;
         }
+      }
+    }
+    main {
+      position:relative;
+
+      .audioPlayer {
+        position: absolute;
+        top: -10%;
+        left: 0;
       }
     }
     .footer{

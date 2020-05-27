@@ -1,14 +1,17 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer, useContext } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import Sounds from "../soundSrc/Sounds";
+import {LangContext} from '../LangContext';
 
 let buildSoundPath;
 const AudioPlayer = ({ playList, playListArray }) => {
 
+  const {locale} = useContext(LangContext); 
+  
   const [playListItem, setPlayList] = useState("");
   const [playListArrayNum, setPlayListArray] = useState("");
   const [autoplay, setAutoplay] = useState(false);
-  const [langHebrew, setLangHebrew] = useState(false);
+  const [lang] = useState(false);
 
   const [audioControl, dispatch] = useReducer(
     (state, action) => {
@@ -46,7 +49,7 @@ const AudioPlayer = ({ playList, playListArray }) => {
         playListItem !== null &&
         playListItem.length > 0
       ) {
-        if(langHebrew){
+        if(locale){
           buildSoundPath = null ?? Sounds[playListArrayNum]['_'];
         }else{
           buildSoundPath = null ?? Sounds[playListArrayNum][playListItem];
@@ -57,7 +60,8 @@ const AudioPlayer = ({ playList, playListArray }) => {
   const controlsOnOff = audioControl.control ? "controlsOff" : "controlsOn";
   return (
     <>
-    <span className="footer" onClick={() => setLangHebrew(!langHebrew)}>{langHebrew ? 'English ': 'Hebrew'}</span>
+    <span className="footer">
+    </span>
       <div className="controls">
         <span
           onClick={() => dispatch({ type: controlsOnOff })}
@@ -65,7 +69,6 @@ const AudioPlayer = ({ playList, playListArray }) => {
         >
           {audioControl.icon} 
         </span>
-        :
         <ReactAudioPlayer
           src={buildSoundPath}
           autoPlay={autoplay}
