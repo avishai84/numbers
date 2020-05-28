@@ -11,7 +11,7 @@ const Lang = () => {
   };
   return (
     <>
-      <button onClick={handleClick} lang={langHebrew}>
+      <button onClick={handleClick} lang={langHebrew.toString()}>
         <span>{langHebrew ? "English " : "עִבְרִית‎"}</span>
       </button>
     </>

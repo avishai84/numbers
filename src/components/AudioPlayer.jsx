@@ -17,17 +17,17 @@ const AudioPlayer = ({ playList, playListArray }) => {
     (state, action) => {
       switch (action.type) {
         case "controlsOn":
-          const mutedSpeaker = "🔇";
+          const mutedSpeaker = "🎛";
           return (state = { control: true, icon: mutedSpeaker });
         case "controlsOff":
-          const speaker = "🔊";
+          const speaker = "🎛";
           return (state = { control: false, icon: speaker });
 
         default:
           return state;
       }
     },
-    { control: true, icon: "🔇" }
+    { control: true, icon: "🎛" }
   );
 
   useEffect(() => {
