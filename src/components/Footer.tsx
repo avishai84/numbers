@@ -1,6 +1,7 @@
 import React from "react";
+import {langFN} from '../types/types';
 
-const Footer = () => {
+const Footer:langFN = () => {
   return (
     <>
       <footer className="footer">
