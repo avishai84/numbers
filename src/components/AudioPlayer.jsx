@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer, useContext } from "react";
+import React, { useState, useEffect, useReducer, useContext, memo } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import Sounds from "../soundSrc/Sounds";
 import {LangContext} from '../LangContext';
@@ -81,4 +81,4 @@ const AudioPlayer = ({ playList, playListArray }) => {
   );
 };
 
-export default AudioPlayer;
+export default memo(AudioPlayer);

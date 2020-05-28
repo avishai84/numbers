@@ -23,10 +23,7 @@ import eight_heb from '../soundSrc/eight_heb.mp3';
 import nine_heb from '../soundSrc/nine_heb.mp3';
 import ten_heb from '../soundSrc/ten_heb.mp3';
 
-
-
 import {SoundsType} from '../types/types';
-//import * as sounds from '../soundSrc/sounds';
 
  const Sounds = [
       { 'zero': zeroMP3, '_': zero_heb },
