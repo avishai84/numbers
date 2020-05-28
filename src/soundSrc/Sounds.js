@@ -10,7 +10,6 @@ import sevenMP3 from '../soundSrc/seven.mp3';
 import eightMP3 from '../soundSrc/eight.mp3';
 import nineMP3 from '../soundSrc/nine.mp3';
 import tenMP3 from '../soundSrc/ten.mp3';
-
 import zero_heb from '../soundSrc/zero_heb.mp3';
 import one_heb from '../soundSrc/one_heb.mp3';
 import two_heb from '../soundSrc/two_heb.mp3';
@@ -23,8 +22,6 @@ import eight_heb from '../soundSrc/eight_heb.mp3';
 import nine_heb from '../soundSrc/nine_heb.mp3';
 import ten_heb from '../soundSrc/ten_heb.mp3';
 
-import {SoundsType} from '../types/types';
-
  const Sounds = [
       { 'zero': zeroMP3, '_': zero_heb },
       { 'one': oneMP3, '_': one_heb},
@@ -33,7 +30,7 @@ import {SoundsType} from '../types/types';
       { 'four': fourMP3, '_': four_heb},
       { 'five': fiveMP3, '_': five_heb},
       { 'six': sixMP3, '_': six_heb},
-      { 'seven': sevenMP3, '_': seven_heb},//
+      { 'seven': sevenMP3, '_': seven_heb},
       { 'eight': eightMP3, '_': eight_heb},
       { 'nine': nineMP3, '_': nine_heb},
       { 'ten': tenMP3, '_': ten_heb}

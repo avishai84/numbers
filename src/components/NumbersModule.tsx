@@ -7,7 +7,7 @@ import fillArray from "./FillArray";
 
 const numberRandomOrderdedArray = fillArray(0, 10);
 const initialNumbers: number[] = [...numberRandomOrderdedArray];
-const NumbersModule = ({ browserName }: any) => {
+const NumbersModule = () => {
   const [rndmNum, setRndmNum] = useState();
   const [level, setLevel] = useState(0);
   const [items, dispatch] = useReducer(

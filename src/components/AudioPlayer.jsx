@@ -4,30 +4,29 @@ import Sounds from "../soundSrc/Sounds";
 import {LangContext} from '../LangContext';
 
 let buildSoundPath;
+
 const AudioPlayer = ({ playList, playListArray }) => {
 
   const {locale} = useContext(LangContext); 
-  
   const [playListItem, setPlayList] = useState("");
   const [playListArrayNum, setPlayListArray] = useState("");
   const [autoplay, setAutoplay] = useState(false);
-  const [lang] = useState(false);
 
   const [audioControl, dispatch] = useReducer(
     (state, action) => {
       switch (action.type) {
         case "controlsOn":
-          const mutedSpeaker = "🔇";
+          const mutedSpeaker = "🎛";
           return (state = { control: true, icon: mutedSpeaker });
         case "controlsOff":
-          const speaker = "🔊";
+          const speaker = "🎛";
           return (state = { control: false, icon: speaker });
 
         default:
           return state;
       }
     },
-    { control: true, icon: "🔇" }
+    { control: true, icon: "🎛" }
   );
 
   useEffect(() => {
@@ -60,8 +59,6 @@ const AudioPlayer = ({ playList, playListArray }) => {
   const controlsOnOff = audioControl.control ? "controlsOff" : "controlsOn";
   return (
     <>
-    <span className="footer">
-    </span>
       <div className="controls">
         <span
           onClick={() => dispatch({ type: controlsOnOff })}
@@ -77,6 +74,7 @@ const AudioPlayer = ({ playList, playListArray }) => {
           controls={audioControl.control}
         />
       </div>
+      <div className="footer"></div>
     </>
   );
 };

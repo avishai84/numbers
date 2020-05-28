@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import {LangContext} from '../LangContext';
+import {langFN} from '../types/types';
 
-const Lang = () => {
-      
- const {locale, setLocale} = useContext(LangContext); ;  
+const Lang:langFN = () => {
+ const {locale, setLocale} = useContext(LangContext); 
  const [langHebrew, setLangHebrew] = useState(false);
  const handleClick = () => {
     setLangHebrew(!langHebrew);
@@ -11,7 +11,7 @@ const Lang = () => {
   };
   return (
     <>
-      <button onClick={handleClick} lang={langHebrew}>
+      <button onClick={handleClick} lang={langHebrew.toString()}>
         <span>{langHebrew ? "English " : "עִבְרִית‎"}</span>
       </button>
     </>
