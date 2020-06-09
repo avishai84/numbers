@@ -7,7 +7,7 @@ const Audio = ({ announcedNumber }) => {
     passStringNumberToAudioPlayer,
     setStringNumberToAudioPlayer,
   ] = useState("");
-  const [isPlayerReady, setIsPlayerReady] = useState(false);
+  const [isPlayerReady] = useState(true);
 
   const convertToString = () => {
     const array = [
@@ -34,10 +34,6 @@ const Audio = ({ announcedNumber }) => {
     announcedNumber !== undefined && setPlayName(announcedNumber);
     announcedNumber !== undefined && convertToString();
   });
-
-  useEffect(() => {
-    setIsPlayerReady(true);
-  }, [playName, passStringNumberToAudioPlayer]);
 
   return (
     <>
