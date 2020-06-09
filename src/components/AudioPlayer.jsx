@@ -10,7 +10,7 @@ const AudioPlayer = ({ playList, playListArray }) => {
   const {locale} = useContext(LangContext); 
   const [playListItem, setPlayList] = useState("");
   const [playListArrayNum, setPlayListArray] = useState("");
-  const [autoplay, setAutoplay] = useState(false);
+  const [autoplay] = useState(true);
 
   const [audioControl, dispatch] = useReducer(
     (state, action) => {
@@ -33,10 +33,6 @@ const AudioPlayer = ({ playList, playListArray }) => {
     setPlayListArray(playListArray);
     setPlayList(playList);
   }, [playListArray, playList]);
-
-  useEffect(() => {
-    setAutoplay(true);
-  },[]);
 
   if (Sounds !== undefined) {
     if (

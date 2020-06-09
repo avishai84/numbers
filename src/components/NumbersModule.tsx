@@ -5,16 +5,21 @@ import { changeEasing } from "./CssFn/CssAlive";
 import "./AllCss/styles.scss";
 import fillArray from "./FillArray";
 
+type MouseUp = () => void;
+
 const numberRandomOrderdedArray = fillArray(0, 10);
 const initialNumbers: number[] = [...numberRandomOrderdedArray];
 const NumbersModule = () => {
-  const [rndmNum, setRndmNum] = useState();
-  const [level, setLevel] = useState(0);
+const [rndmNum, setRndmNum] = useState();
+const [level, dispatchLevel] = useReducer((state:number, action:any) => {
+    return state + 1;
+ },0);
+
   const [items, dispatch] = useReducer(
     (state: any, action: any): any => {
       switch (action.type) {
-        case "new":
-          setLevel(level + 1);
+        case "initialize":
+          dispatchLevel(level + 1);
           return (state = [...initialNumbers]);
         case "rmv":
           if (rndmNum == Number.parseInt(action.value)) {
@@ -46,7 +51,12 @@ const NumbersModule = () => {
       <header>
         {items.length === 0 ? (
           <div className="nextGame">
-            <button onClick={() => dispatch({ type: "new" })}>next game</button>
+            <button
+             onClick={() => {
+               dispatch({type: "initialize"});
+               }}>
+                next game
+            </button>
           </div>
         ) : (
           <>

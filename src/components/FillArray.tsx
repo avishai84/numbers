@@ -16,10 +16,10 @@ const fillArray: fillArrayFN<number> = (min, max) => {
         array.pop();
       }
     }
-    return [...array];
+    return array;
   }
   fillArray();
-  return [...array];
+  return array;
 };
 
 export default fillArray;
