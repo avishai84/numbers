@@ -5,8 +5,6 @@ import { changeEasing } from "./CssFn/CssAlive";
 import "./AllCss/styles.scss";
 import fillArray from "./FillArray";
 
-type MouseUp = () => void;
-
 const numberRandomOrderdedArray = fillArray(0, 10);
 const initialNumbers: number[] = [...numberRandomOrderdedArray];
 const NumbersModule = () => {
