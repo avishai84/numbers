@@ -1,9 +1,10 @@
-import React, { useReducer, useState, useEffect } from "react";
+import React, { useReducer, useState, useEffect, useContext } from "react";
 import GenerateNumber from "./GenerateNumber";
 import Audio from "./Audio";
 import { changeEasing } from "./CssFn/CssAlive";
 import "./AllCss/styles.scss";
 import fillArray from "./FillArray";
+import {LangContext} from '../LangContext';
 
 const numberRandomOrderdedArray = fillArray(0, 10);
 const initialNumbers: number[] = [...numberRandomOrderdedArray];
@@ -12,6 +13,7 @@ const [rndmNum, setRndmNum] = useState();
 const [level, dispatchLevel] = useReducer((state:number, action:any) => {
     return state + 1;
  },0);
+ const {locale} = useContext(LangContext); 
 
   const [items, dispatch] = useReducer(
     (state: any, action: any): any => {
@@ -53,20 +55,20 @@ const [level, dispatchLevel] = useReducer((state:number, action:any) => {
              onClick={() => {
                dispatch({type: "initialize"});
                }}>
-                next game
+                {locale ? 'עוד משחק' : 'next game'} 
             </button>
           </div>
         ) : (
           <>
-            <h4>Announced: {rndmNum}</h4>
-            <h4>Level: {level}</h4>
+            <h4>{locale ? 'המספר': 'Announced'}: {rndmNum}</h4>
+        <h4>{locale ? 'שלב' : 'Level'}: {level}</h4>
           </>
         )}
       </header>
       <main>
         {items.length === 0 ? (
           <div className="flexWrapper">
-            <h1>yay! next level {level + 1}</h1>
+            <h1>{locale? 'מצויין. השלב הבא' : 'yay! next level'} {level + 1}</h1>
           </div>
         ) : (
           <ul className="ul">
