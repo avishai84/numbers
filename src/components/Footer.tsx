@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
-import {langFN} from '../types/types';
+import {LangFN} from '../types';
 import {LangContext} from '../LangContext';
 
-const Footer:langFN = () => {
+const Footer:LangFN = () => {
   const {locale} = useContext(LangContext); 
   const dateYear = new Date().getFullYear();
   return (

@@ -1,6 +1,6 @@
 import {random} from 'lodash';
-import {randomizerFN} from '../types/types'
+import {RandomizerFN} from '../types'
 
-const Randomizr: randomizerFN<number> = (min, max) => random(min, max);
+const Randomizr: RandomizerFN<number> = (min, max) => random(min, max);
 
 export default Randomizr;

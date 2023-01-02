@@ -1,8 +1,8 @@
 import { random } from "lodash";
 import CheckArray from "./CheckArray";
-import {fillArrayFN} from '../types/types';
+import {FillArrayFN} from '../types';
 
-const fillArray: fillArrayFN<number> = (min, max) => {
+const fillArray: FillArrayFN<number> = (min, max) => {
   let array: number[] = [];
   let rndNum:number;
   rndNum = random(min, max);

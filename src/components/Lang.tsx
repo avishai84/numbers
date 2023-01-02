@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import {LangContext} from '../LangContext';
-import {langFN} from '../types/types';
+import {LangFN} from '../types';
 
-const Lang:langFN = () => {
+const Lang:LangFN = () => {
  const {locale, setLocale} = useContext(LangContext); 
  const [langHebrew, setLangHebrew] = useState(false);
  const handleClick = () => {

@@ -1,4 +1,4 @@
-import {CheckArrayFN} from '../types/types';
+import {CheckArrayFN} from '../types';
 
 const CheckArray: CheckArrayFN = (randomNum, arrayFromState) => {
       if(arrayFromState.length > 0){

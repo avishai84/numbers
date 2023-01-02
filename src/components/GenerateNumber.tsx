@@ -1,6 +1,6 @@
 import Randomizr from './Randomizr';
 import CheckArray from './CheckArray';
-import {GenerateNumberFN} from '../types/types';
+import {GenerateNumberFN} from '../types';
 
 const GenerateNumber:GenerateNumberFN<number> = (currentArrayState, min, max) => {
       let rndNum:any, checking:any;
